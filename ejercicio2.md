@@ -62,3 +62,20 @@ Por último lo ejecutamos
 Como podemos ver en los resultados la máquina virtual de amazon ya tenia instalado Git por lo que no realiza dicha instalación
 
 ![eje2t2](https://user-images.githubusercontent.com/11316534/31940739-789371e4-b8bf-11e7-8645-541f8358cef0.png)
+
+### 3-Escribir en YAML la siguiente estructura de datos en JSON { uno: "dos", tres: [ 4, 5, "Seis", { siete: 8, nueve: [ 10, 11 ] } ] }
+
+Su traducción a YAML sería
+
+```
+---
+uno: dos
+tres:
+- 4
+- 5
+- Seis
+- siete: 8
+  nueve:
+  - 10
+  - 11
+```
