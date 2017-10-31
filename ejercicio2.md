@@ -1,4 +1,4 @@
-s## Ejercicios 2 - Antonio David López Machado
+## Ejercicios 2 - Antonio David López Machado
 
 ### 1-Instalar chef-solo en la máquina virtual que vayamos a usar.
 
