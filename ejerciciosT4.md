@@ -24,13 +24,21 @@ vagrant ssh
 ```
 ![Imagen](imgs/debianSSH.png)
 
-#### 2- Instalar una máquina virtual ArchLinux o FreeBSD para KVM, otro hipervisor libre, usando Vagrant y conectar con ella.
-```
-vagrant box add ArchlinuxKVM https://vagrant-kvm-boxes.s3.amazonaws.com/archlinux-kvm.box
+#### 3- Crear un script para provisionar de forma básica una máquina virtual para el proyecto que se esté llevando a cabo en la asignatura.
 
 ```
+Vagrant.configure("2") do |config|
 
-##### 3- Crear un script para provisionar de forma básica una máquina virtual para el proyecto que se esté llevando a cabo en la asignatura.
+	config.vm.box = "debian8"
+
+	config.ssh.insert_key = false
+
+	config.vm.provision "shell",
+		inline: "sudo apt-get install -y python3-dev python3-pip git"
+  end
+
+end
+```
 
 #### 4- Configurar tu máquina virtual usando `vagrant` con el provisionador ansible
 Primero tenemos que crear descargar la imagen a provisionar. Para ello:
@@ -59,5 +67,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+
 Tras levantar la máquina virtual (vagrant up) nos realizara el provisionamiento de la máquina como podemos ver en la imagen.
+
 ![Imagen](imgs/ansibleVagrantDone.png)
