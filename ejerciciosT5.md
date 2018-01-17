@@ -25,3 +25,11 @@ Tras esto, podemos trabajar con python3 a traves del contenedor de una forma sen
 sudo docker run --rm frolvlad/alpine-python3 python3 -c 'print("Hello World")'
 ```
 ![Imagen](imgs/T5-1-2.png)
+
+#### 4- Comparar el tamaño de las imágenes de diferentes sistemas operativos base, Fedora, CentOS y Alpine, por ejemplo.
+
+Para la comparación, he realizado la instalacción de cada una de ellas y como podemos apreciar con el comando (docker images) podemos apreciar como tanto centos y fedora tienen un tamaño considerable (~200mb) mientras que alpine solo ocupa ~4mb.
+
+![Imagen](imgs/T5-2-0.png)
+
+Esto nos permite indicar
