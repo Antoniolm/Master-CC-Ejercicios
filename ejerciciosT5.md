@@ -1,5 +1,17 @@
 ## Ejercicios Tema 4 - Antonio David López Machado
 
+#### 1- Instala LXC en tu versión de Linux favorita. Normalmente la versión en desarrollo, disponible tanto en GitHub como en el sitio web está bastante más avanzada; para evitar problemas sobre todo con las herramientas que vamos a ver más adelante, conviene que te instales la última versión y si es posible una igual o mayor a la 2.0.
+
+Para la instalación se ha utilizado una máquina virtual en azure con una imagen de Ubuntu 16.04LTS.
+
+La instalación de lxc se ha realizado con la siguiente instrucción:
+```
+sudo apt-get install lxc
+```
+
+Y como podemos observar podemos obtener la versión de lxc en nuestra máquina virtual.
+
+![Imagen](imgs/versionLxc.png)
 
 #### 4- Buscar alguna demo interesante de Docker y ejecutarla localmente, o en su defecto, ejecutar la imagen anterior y ver cómo funciona y los procesos que se llevan a cabo la primera vez que se ejecuta y las siguientes ocasiones.
 
@@ -26,10 +38,20 @@ sudo docker run --rm frolvlad/alpine-python3 python3 -c 'print("Hello World")'
 ```
 ![Imagen](imgs/T5-1-2.png)
 
-#### 4- Comparar el tamaño de las imágenes de diferentes sistemas operativos base, Fedora, CentOS y Alpine, por ejemplo.
+#### 5- Comparar el tamaño de las imágenes de diferentes sistemas operativos base, Fedora, CentOS y Alpine, por ejemplo.
 
-Para la comparación, he realizado la instalacción de cada una de ellas y como podemos apreciar con el comando (docker images) podemos apreciar como tanto centos y fedora tienen un tamaño considerable (~200mb) mientras que alpine solo ocupa ~4mb.
+Para la comparación, he realizado la instalación de cada una de ellas y como podemos apreciar con el comando (docker images) podemos apreciar como tanto centos y fedora tienen un tamaño considerable (~200mb) mientras que alpine solo ocupa ~4mb.
 
 ![Imagen](imgs/T5-2-0.png)
 
-Esto nos permite indicar
+Esto nos permite ver como alpine puede ser una buena opción cuando necesitas velocidad de creación de contenedores.
+
+#### 6- Crear a partir del contenedor anterior una imagen persistente con commit.
+
+#### 7- Examinar la estructura de capas que se forma al crear imágenes nuevas a partir de contenedores que se hayan estado ejecutando.
+
+#### 8- Crear un volumen y usarlo, por ejemplo, para escribir la salida de un programa determinado.
+
+#### 9- Usar un miniframework REST para crear un servicio web y introducirlo en un contenedor, y componerlo con un cliente REST que sea el que finalmente se ejecuta y sirve como “frontend”.
+
+#### 10- Reproducir los contenedores creados anteriormente usando un Dockerfile.
