@@ -74,6 +74,15 @@ sudo docker commit <id container> antoniolm/ejercicio6
 
 #### 7- Examinar la estructura de capas que se forma al crear imágenes nuevas a partir de contenedores que se hayan estado ejecutando.
 
+Para ver la estructura de capas de nuestra imagen deben ejecutar la siguiente instrucción:
+```
+sudo docker history antoniolm/ejercicio6
+```
+
+Y como podemo ver en la imagen, la última capa es la que nosotros creamos y la penúltima es la de la imagen utilizada para crear nuestra imagen persistente.
+
+![Image](imgs/T5-7.png)
+
 #### 8- Crear un volumen y usarlo, por ejemplo, para escribir la salida de un programa determinado.
 
 #### 9- Usar un miniframework REST para crear un servicio web y introducirlo en un contenedor, y componerlo con un cliente REST que sea el que finalmente se ejecuta y sirve como “frontend”.
