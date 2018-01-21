@@ -13,6 +13,22 @@ Y como podemos observar podemos obtener la versión de lxc en nuestra máquina v
 
 ![Imagen](imgs/versionLxc.png)
 
+#### 2- Instalar una distro tal como Alpine y conectarse a ella usando el nombre de usuario y clave que indicará en su creación
+
+El primer paso sera descargar la imagen. Para ello:
+```
+sudo lxc-create -t alpine -n ejercicio2
+```
+
+Tras esto ya podriamos conectar a Alpine con las siguientes instrucciones:
+```
+sudo lxc-start -n ejercicio2
+sudo lxc-attach -n ejercicio2
+```
+Y como podemos observa en la imagen la conexión se ha establecido con exito.
+
+![Imagen](imgs/ejer2.png)
+
 #### 4- Buscar alguna demo interesante de Docker y ejecutarla localmente, o en su defecto, ejecutar la imagen anterior y ver cómo funciona y los procesos que se llevan a cabo la primera vez que se ejecuta y las siguientes ocasiones.
 
 La imagen seleccionada ha sido : https://hub.docker.com/r/frolvlad/alpine-python3/ la cual es una imagen interesante ya que
@@ -47,6 +63,14 @@ Para la comparación, he realizado la instalación de cada una de ellas y como p
 Esto nos permite ver como alpine puede ser una buena opción cuando necesitas velocidad de creación de contenedores.
 
 #### 6- Crear a partir del contenedor anterior una imagen persistente con commit.
+
+Para esto debemos realizar la siguiente instrucción con el contenedor del que queramos obtener una imagen persistente.
+
+```
+sudo docker commit <id container> antoniolm/ejercicio6
+```
+![Imagen](imgs/T5-6.png)
+
 
 #### 7- Examinar la estructura de capas que se forma al crear imágenes nuevas a partir de contenedores que se hayan estado ejecutando.
 
