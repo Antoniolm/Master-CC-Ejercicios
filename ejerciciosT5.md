@@ -83,8 +83,51 @@ Y como podemo ver en la imagen, la última capa es la que nosotros creamos y la 
 
 ![Image](imgs/T5-7.png)
 
-#### 8- Crear un volumen y usarlo, por ejemplo, para escribir la salida de un programa determinado.
-
 #### 9- Usar un miniframework REST para crear un servicio web y introducirlo en un contenedor, y componerlo con un cliente REST que sea el que finalmente se ejecuta y sirve como “frontend”.
 
-#### 10- Reproducir los contenedores creados anteriormente usando un Dockerfile.
+Para ello he realizado la siguiente composición:
+* Web realizada en flask
+* Mongo db como contenedor de datos del sitio web
+
+El docker-compose.yml utilizado ha sido :
+```
+
+version: '2'
+
+services:
+  mongo:
+    image: 'mongo:latest'
+    container_name: mongo
+    volumes:
+      - 'mongo:/data/db'
+
+  service:
+    build: compose/service
+    container_name: service
+    ports:
+      - "80:5000"
+    depends_on:
+      - 'mongo'
+
+volumes:
+mongo:
+```
+y el dockerfile de nuestro servicio en flask es:
+```
+FROM frolvlad/alpine-python3
+
+MAINTAINER Antonio David López Machado <antdlopma@gmail.com>
+WORKDIR /app
+
+ADD static/style.css /app/static/style.css
+ADD templates/index.html /app/templates/index.html
+
+RUN apk update && apk upgrade
+RUN apk add git
+
+RUN pip3 install flask pymongo
+COPY ./service.py /app
+
+ENTRYPOINT ["python"]
+CMD ["service.py"]
+```
